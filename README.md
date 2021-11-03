@@ -1,20 +1,12 @@
-# genetic_algorithm_to_generate_random_simple_polygon
-Libraries:
-I have imported shapely library because I have to create a polygon from input points that’s why I imported shapely module. 
-For arrays I have used Numpy library and for plotting the graph I have used Matplotlib library.
-To generate random numbers I have used random library.
-There are 4 steps of genetic algorithm
-1.Population Generation:
-First I have generated population by taking multiple points named p0,p1,p2,p3,p4,p5 and p6 respectively. I used random. shuffle function to shuffle the chromosomes(p0,p1,p2,p3,p4,p5,p6)
-2.Chromosomes:
-A chromosome is an individual in a population. Here p0,p1,p2,p3,p4,p5,p6 are 7 chromosomes in a population. Plot chain function passes lists of points 2d lists in its argument and plots the chain with the help of the points. 
-Check intersect lines function finds if l1 and l2 are intersecting or not. I have used a check which makes sure that it does not include end point intersection of lines in check
-intersection function.
-Calculate intersections function overall calculates intersections of all the lines instead of finding it one by one separately as we did above in the check intersect lines function.
-3.Roulette Wheel Function:
-Get chain (list of points) function shuffles the points until it gets a chain with no intersection.
-4.Fitness Function:
-I have used a fitness function get fitness (list of points) because it checks if we are getting a polygon without intersection or not. If we get a polygon with intersection then we have to use mutation step.
-5.Mutation Function:
-I have used a mutation function named (modify chain) it gets rid of the intersection problem of the polygonal chain when we join the starting and the end points.
+Generate random polygons from a list of 2d points using genetic algorithm
 
+Involves the following steps:
+
+- Create a population and identify individual chromosomes 
+- Use a roulette wheel to get a chain of points with no intersections
+- Do a fitness test on the chain
+- Mutate the chain if the fitness test is failed (fitness != 0)
+
+
+For in-depth details, refer to method-1 of the paper: **"Use of simple polygonal chains in generating random simple polygons"**
+https://link.springer.com/article/10.1007/s13160-017-0258-8
